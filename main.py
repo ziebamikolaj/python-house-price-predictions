@@ -36,6 +36,7 @@ def plot_correlation_matrix(data):
     
 plot_correlation_matrix(california_housing_data.frame)
 plot_data(california_housing_data.frame['Latitude'], california_housing_data.frame['Longitude'], california_housing_data.frame['MedHouseVal'], 'Median House Value', 'Latitude', 'Longitude')
+
 # Model Class
 class CaliforniaHousingModel(keras.Model):
     def __init__(self):
@@ -50,7 +51,7 @@ class CaliforniaHousingModel(keras.Model):
         return self.out_layer(x)
 
 # Training Loop Function
-def train_model(model, X_train, y_train, X_test, y_test, epochs=10, batch_size=32):
+def train_model(model, X_train, y_train, X_test, y_test, epochs=100, batch_size=32):
     model.compile(optimizer='adam', loss='mean_squared_error') 
 
     callbacks = [
